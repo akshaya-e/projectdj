@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body_class %}login-page{% endblock %}
+
+{% block content %}
+<!--<center><h1 style="color:white;">Welcome to the Tour Packages Management System</h1></center>-->
+<h2 style="color:yellow;">Login</h2>
+<form method="POST" style="color:yellow;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" style="color:darkblue;">Log In</button>
+</form>
+{% endblock %}

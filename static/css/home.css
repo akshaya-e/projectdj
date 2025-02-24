@@ -1,0 +1,116 @@
+body {
+    background-image: url('/static/images/ti.jpg'); 
+    background-size: cover;
+    text-align: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    margin: 0;
+    padding:0;
+    background-color: rgb(74, 225, 245);
+    filter: brightness(10px);
+}
+
+
+h1 {
+    font-size: 50px; 
+    color:white;
+    text-align: center;
+    font-weight:bold;
+}
+h2{
+    color:white;
+}
+
+
+nav{
+    
+    padding:10px 20px;
+    justify-content:space-between; 
+    align-items: center; 
+    display: flex;
+    background-color:rgb(10, 10, 93);
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color:whitesmoke;
+
+}
+
+
+
+.login-page {
+    background: url('/static/images/lg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+.register-page {
+    background: url('/static/images/rp.jpg') no-repeat center center fixed;
+    background-size: cover;
+    h2{
+     color:#007bff;
+    }
+}
+
+.create-package {
+    background: url('/static/images/cp.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.Package-list {
+    background: url('/static/images/pll.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.pending-packages {
+    background: url('/static/images/lg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.book-package {
+    background: url('/static/images/bk.jpg') no-repeat center center fixed;
+    background-size: cover;
+    
+}
+
+
+/* Styling the Register Page */
+.register-container {
+    width: 300px;  /* Set a fixed width */
+    background: rgba(216, 249, 248, 0.9); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 8px;
+    margin: 30px auto;  /* Centers the form */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    
+    
+}
+
+/* Style form inputs */
+.register-container input,
+.register-container select {
+    width: 60%;
+    padding: 5px;
+    margin: 1px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+    color:blue;
+}
+
+/* Style the Sign-Up button */
+.register-container button {
+    width: 30%;
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.register-container button:hover {
+    background-color: #15904f;
+}

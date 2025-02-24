@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{% block content %}
+<p>{% if form.instance.package_id %}Edit Package {% else %}Create a New Package{% endif %}</p>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'list_packages' %}">Cancel</a>
+{% endblock %}

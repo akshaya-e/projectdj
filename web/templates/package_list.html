@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block body_class %}Package-list{% endblock %}
+{% block body_class %}no-background{% endblock %}
 {% block content %}
 <h2 style="color:white;">AVAILABLE PACKAGES</h2>
 
@@ -8,10 +8,10 @@
     <li>
       <strong style="color:black;">{{ package.title }}</strong>- <strong>{{ package.destination }}</strong>
       <br>
-      <strong style="color:white;">Price: {{ package.price }} </strong> 
+      <strong style="color:black;">Price: {{ package.price }} </strong> 
       <br>
-      <strong style="color:white;">Expiry Date: {{ package.expiry_date}}</strong><br><br>
-      <strong style="color:black;"><img src="{{package.image.url}}" alt="{{ package.destination}}" width="250px" height="250px"><br><br>
+      <strong style="color:black;">Expiry Date: {{ package.expiry_date}}</strong><br><br>
+      <strong style="color:black;"><img src="{{package.image.url}}" alt="{{ package.destination}}" width="550px" height="450px"><br><br>
 
       {% if user.role == 'user' %}
         <a href="{% url 'book_package' package.id %}" style="color: black;">Book Now</a><br><br>

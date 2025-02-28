@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <!--<link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link rel="stylesheet" href="{% static 'css/register.css' %}">-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     
     
 </head>
@@ -20,12 +21,13 @@
                 {% if user.role == 'vendor' %}
                     <a href="{% url 'create_package' %}">Create Package</a>&nbsp;&nbsp;
                 {% endif %}
-                {% if user.role == 'admin' %}
+                <!--{% if user.role == 'admin' %}
                     <a href="{% url 'pending_packages' %}">Pending Packages</a>&nbsp;&nbsp;
-                {% endif %}
+                {% endif %}-->
             {% else %}
                 <a href="{% url 'login' %}">Login</a>&nbsp;&nbsp;
                 <a href="{% url 'register' %}">Register</a>&nbsp;&nbsp;
+                
             {% endif %}
                 
         </nav>

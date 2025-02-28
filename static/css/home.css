@@ -6,7 +6,6 @@ body {
     height: 90vh;
     margin: 0;
     padding:0;
-    background-color: rgb(74, 225, 245);
     filter: brightness(10px);
 }
 
@@ -59,10 +58,11 @@ nav a{
     background: url('/static/images/cp.jpg') no-repeat center center fixed;
     background-size: cover;
 }
-.Package-list {
+/*.Package-list {
+    
     background: url('/static/images/pll.jpg') no-repeat center center fixed;
     background-size: cover;
-}
+}*/
 .pending-packages {
     background: url('/static/images/lg.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -72,6 +72,8 @@ nav a{
     background-size: cover;
     
 }
+
+
 
 
 /* Styling the Register Page */
@@ -114,3 +116,8 @@ nav a{
 .register-container button:hover {
     background-color: #15904f;
 }
+
+
+
+
+

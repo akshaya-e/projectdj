@@ -18,11 +18,10 @@ def register(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            messages.success(request, 'Registration successful. You can now log in.')
             return redirect('login')
     else:
         form = CustomUserCreationForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'register.html',{'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -52,7 +51,6 @@ def list_packages(request):
 @login_required
 def create_package(request):
     if request.user.role != 'vendor':
-        messages.error(request, 'Only vendors can create packages.')
         return redirect('home')
 
     if request.method == 'POST':
@@ -61,7 +59,6 @@ def create_package(request):
             package = form.save(commit=False)
             package.vendor = request.user
             package.save()
-            messages.success(request, 'Package created successfully (pending admin approval).')
             return redirect('list_packages')
     else:
         form = PackageForm()
@@ -92,7 +89,6 @@ def approve_package(request, package_id):
     package = get_object_or_404(Package, id=package_id, approved=False)
     package.approved = True
     package.save()
-    messages.success(request, f'Package "{package.title}" approved.')
     return redirect('pending_packages')
 
 # Admin only View pending packages
@@ -131,8 +127,20 @@ def delete_package(request,package_id):
 
 
 
+#def vender_register(request):
+    #if request.method=='POST':
+        #form=VendorForm(request.POST)
+        #if form.is_valid():
+            #user=form.save()
+            #return redirect('login')
+    #else:
+        #form=VendorForm()
+    #return render(request,'vender_register.html',{'form':form})
+        
 
-            
+
+
+
 
 
 

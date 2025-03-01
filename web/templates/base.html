@@ -21,12 +21,10 @@
                 {% if user.role == 'vendor' %}
                     <a href="{% url 'create_package' %}">Create Package</a>&nbsp;&nbsp;
                 {% endif %}
-                <!--{% if user.role == 'admin' %}
-                    <a href="{% url 'pending_packages' %}">Pending Packages</a>&nbsp;&nbsp;
-                {% endif %}-->
             {% else %}
                 <a href="{% url 'login' %}">Login</a>&nbsp;&nbsp;
-                <a href="{% url 'register' %}">Register</a>&nbsp;&nbsp;
+                <a href="{% url 'register' %}">User Register</a>&nbsp;&nbsp;
+                <a href="{% url 'vendor_register' %}">Vendor Register</a>&nbsp;&nbsp;
                 
             {% endif %}
                 

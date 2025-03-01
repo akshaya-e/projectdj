@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+{% block body_class %}no-background{% endblock %}
 {% block content %}
 <p>{% if form.instance.package_id %}Edit Package {% else %}Create a New Package{% endif %}</p>
 <form method="POST" enctype="multipart/form-data">

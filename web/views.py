@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
-from .forms import CustomUserCreationForm, CustomAuthenticationForm, PackageForm
+from .forms import CustomUserCreationForm, CustomAuthenticationForm, PackageForm,VendorRegistrationForm
 from .models import CustomUser,Package, Booking
 from celery import shared_task
 from django.utils import timezone
@@ -22,6 +22,20 @@ def register(request):
     else:
         form = CustomUserCreationForm()
     return render(request, 'register.html',{'form': form})
+
+
+def vendor_register(request):
+    if request.method=='POST':
+        form=VendorRegistrationForm(request.POST)
+        if form.is_valid():
+            user=form.save()
+            return redirect('login')
+    else:
+        form=VendorRegistrationForm()
+    return render(request,'vendor_register.html',{'form':form})
+        
+
+
 
 def user_login(request):
     if request.method == 'POST':
@@ -127,16 +141,7 @@ def delete_package(request,package_id):
 
 
 
-#def vender_register(request):
-    #if request.method=='POST':
-        #form=VendorForm(request.POST)
-        #if form.is_valid():
-            #user=form.save()
-            #return redirect('login')
-    #else:
-        #form=VendorForm()
-    #return render(request,'vender_register.html',{'form':form})
-        
+
 
 
 

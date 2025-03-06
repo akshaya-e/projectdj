@@ -1,12 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser,timezone
+from django.contrib.auth.models import AbstractUser,timezone,User
 
 # Create your models here.
 
 class CustomUser(AbstractUser):
     ROLE_CHOICES = (
         ('user', 'User'),
-        #('vendor', 'Vendor'),
+        ('vendor', 'Vendor'),
         #('admin', 'Admin'),
     )
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='customer')
@@ -52,13 +52,12 @@ class Booking(models.Model):
     
     
     
+class Vendor(models.Model):
+    user=models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    company_name = models.CharField(max_length=100)
+    contact_number = models.CharField(max_length=50)
+    address=models.TextField()
     
-    class Vendor(models.Model):
-        user=models.ForeignKey(CustomUser,on_delete=models.CASCADE)
-        company_name = models.CharField(max_length=100)
-        contact_number = models.CharField(max_length=50)
-        address=models.TextField()
-    
-        def __str__(self):
-            return self.company_name
+    def __str__(self):
+        return self.company_name
     

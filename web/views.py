@@ -3,7 +3,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 from .forms import CustomUserCreationForm, CustomAuthenticationForm, PackageForm,VendorRegistrationForm
-from .models import CustomUser,Package, Booking
+from .models import CustomUser,Package, Booking,User
 from celery import shared_task
 from django.utils import timezone
 from web.models import Package
@@ -20,7 +20,7 @@ def register(request):
             user = form.save()
             return redirect('login')
     else:
-        form = CustomUserCreationForm()
+        form=CustomUserCreationForm()
     return render(request, 'register.html',{'form': form})
 
 

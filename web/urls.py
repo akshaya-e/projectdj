@@ -13,7 +13,6 @@ urlpatterns = [
     path('admin/packages/approve/<int:package_id>/', v.approve_package, name='approve_package'),
     path('packages/edit/<int:package_id>',v.edit_package,name='edit_package'),
     path('packages/delete/<int:package_id>',v.delete_package,name='delete_package'),
-    
     path('vendor_register/', v.vendor_register, name='vendor_register'),
     
     

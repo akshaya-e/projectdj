@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import CustomUser, Package
 
+
+
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
@@ -19,7 +21,7 @@ class PackageForm(forms.ModelForm):
 
 
 class VendorRegistrationForm(UserCreationForm):
-    company_name=forms.CharField(max_length=200,required=True,label="Company name")
+    company_name=forms.CharField(max_length=100,required=True,label="Company name")
     contact_number=forms.CharField(max_length=50,required=True,label="Contact number")
     address=forms.CharField(widget=forms.Textarea,required=True,label="Address")
     
@@ -28,6 +30,7 @@ class VendorRegistrationForm(UserCreationForm):
         fields=['username','email','password1','password2']
     
     def save(self,commit=True):
+        from .models import Vendor
         user=super().save(commit=False)
         user.role='vendor'
         if commit:

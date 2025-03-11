@@ -5,13 +5,12 @@
 <p>Destination: {{ package.destination }}</p>
 <!--<p>Image: {{ package.image }}-->
 <p>Price: {{ package.price }}</p><br>
-<form method="POST">
-    {% csrf_token %}
+<form>
     <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_PtAUstQWX1jhN9" async></script>
 </form><br>
 
-<!--<form method='POST'>
+<form method='POST'>
     {% csrf_token %}
     <button type="submit">Confirm Booking</button>
-</form>-->
+</form>
 {% endblock %}

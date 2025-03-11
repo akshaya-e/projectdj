@@ -6,7 +6,7 @@ from django.contrib.auth.models import AbstractUser,timezone,User
 class CustomUser(AbstractUser):
     ROLE_CHOICES = (
         ('user', 'User'),
-        ('vendor', 'Vendor'),
+        #('vendor', 'Vendor'),
         #('admin', 'Admin'),
     )
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='customer')
@@ -49,7 +49,7 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"Booking by{self.user.username} for {self.package.title}"
-    
+        #return f"{self.user.username} booked {self.package.title}"
     
     
 class Vendor(models.Model):

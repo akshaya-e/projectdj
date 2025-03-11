@@ -14,14 +14,14 @@ def home(request):
     return render(request, 'home.html')
 
 def register(request):
-    if request.method == 'POST':
+    if request.method=='POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             return redirect('login')
     else:
         form=CustomUserCreationForm()
-    return render(request, 'register.html',{'form': form})
+    return render(request,'register.html',{'form': form})
 
 
 def vendor_register(request):

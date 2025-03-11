@@ -7,7 +7,7 @@ from .models import CustomUser, Package
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ['username', 'email','password1', 'password2']
+        fields = ['username','role','email','password1', 'password2']
 
 class CustomAuthenticationForm(AuthenticationForm):
     pass 
